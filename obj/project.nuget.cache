@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "f9014jDNEl8WVdUV2vqM8Iy62vwlN29M2U/7TbP3XG+LLDmouh9KVdsbeJL0GKMXBmrmv+s9oIx0ByIYmWrZCw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\leand\\OneDrive\\Área de Trabalho\\AulaPOOCelular\\AulaPOOCelular.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\leand\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}
