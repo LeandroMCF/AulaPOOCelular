@@ -8,8 +8,9 @@ namespace AulaPOOCelular
         static void Main(string[] args)
         {
             string bloqueDesbloque;
-            int ops = 0, ops3 = 0, ops4 = 0, nContatos = 0;
-            string nomeContatos;
+            int ops = 0, ops3 = 0, ops4 = 0, contador = 0;
+            string[] nomeContatos = new string[contador];
+            int[] nContatos = new int[contador];
 
             configCel celular = new configCel();
             Console.Write("Comprando Celular.\nDigite o Modelo do seu celular: ");
@@ -29,11 +30,11 @@ namespace AulaPOOCelular
                     }else{
                         bloqueDesbloque = "[2] Bloquear celular";
                     }
-                        Console.WriteLine($"{bloqueDesbloque}\n[3] Fazer ligação\n[4] Eviar mensagem\n[0] Desligar celular");
+                        Console.WriteLine($"{bloqueDesbloque}\n[3] Fazer ligação\n[4] Eviar mensagem\n[5] Adicionar contatos\n[0] Desligar celular");
                         ops = int.Parse(Console.ReadLine());
-                        while (ops != 0 && ops != 1 && ops != 2 && ops != 3 && ops != 4)
+                        while (ops != 0 && ops != 1 && ops != 2 && ops != 3 && ops != 4 && ops != 5)
                         {
-                            Console.WriteLine($"Opção inválida.\n{bloqueDesbloque}\n[3] Fazer ligação\n[4] Eviar mensagem\n[0] Desligar celular");
+                            Console.WriteLine($"Opção inválida.\n{bloqueDesbloque}\n[3] Fazer ligação\n[4] Eviar mensagem\n[5] Adicionar contatos\n[0] Desligar celular");
                             ops = int.Parse(Console.ReadLine());
                         }
 
@@ -108,6 +109,11 @@ namespace AulaPOOCelular
                                 
                             } while (ops3 != 0);
                         break;
+
+                        case 5:
+                            contador++;
+                            Contato(nomeContatos, nContatos, contador);
+                        break;
                         case 0:
                             Console.WriteLine($"Desligando {celular.modelo}.");
                         break;
@@ -115,10 +121,17 @@ namespace AulaPOOCelular
             } while (ops != 0);
             
 
-            void CofigContatos(int[] a, string[] b)
-            {
-                
-            }
         }
+            static void Contato(string[] a, int[] b, int c)
+            {
+                for (int i = 0; i < c; i++)
+                {
+                    Console.Write($"Digite o nome do contato\n- ");
+                    a[c] = Console.ReadLine();
+                    Console.Write($"Digite o numero do contato\n- ");
+                    b[c] = int.Parse(Console.ReadLine());
+                }
+                Console.WriteLine($"Contato salvo");
+            }
     }
 }
